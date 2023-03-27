@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_property_types",
+  "info": {
+    "singularName": "product-property-type",
+    "pluralName": "product-property-types",
+    "displayName": "ProductPropertyType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    }
+  }
+}

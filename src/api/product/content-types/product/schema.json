@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "pluginOptions": {},
+      "type": "richtext"
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {}
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {}
+    },
+    "price": {
+      "pluginOptions": {},
+      "type": "decimal"
+    },
+    "discountedPrice": {
+      "pluginOptions": {},
+      "type": "decimal"
+    },
+    "order": {
+      "pluginOptions": {},
+      "type": "integer"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "SKU": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": false
+    },
+    "EAN": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "productProperties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-property.product-property",
+      "mappedBy": "product"
+    },
+    "variants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-variant.product-variant",
+      "inversedBy": "products"
+    }
+  }
+}
